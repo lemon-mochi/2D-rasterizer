@@ -64,13 +64,13 @@ Rasterizer.prototype.drawLine = function(v1, v2) {
   }
 }
 
-function pointIsInsideTriangle(v0, v1, v2, p, ymax, xmin) {
+function pointIsInsideTriangle(v0, v1, v2, p, ymin, xmin) {
   const [x, y] = p;
   const [x0, y0, [r0, g0, b0]] = v0;
   const [x1, y1, [r1, g1, b1]] = v1;
   const [x2, y2, [r2, g2, b2]] = v2;
 
-  // idea: top edge will have both y's equal to max y
+  // idea: top edge will have both y's equal to min y
   // idea: find minimum x in v's. The edges that use this are the left edges.
 
   var a = y1 - y0;
@@ -80,7 +80,7 @@ function pointIsInsideTriangle(v0, v1, v2, p, ymax, xmin) {
   var check = a * x + b * y + c;
 
   // not top edge or left edge
-  if ((y1 != y0 || y1 != ymax) && (x1 != xmin && x0 != xmin)) {
+  if ((y1 != y0 || y1 != ymin) && (x1 != xmin && x0 != xmin)) {
     if (check <= 0) return false;
   }
   else {
@@ -93,7 +93,7 @@ function pointIsInsideTriangle(v0, v1, v2, p, ymax, xmin) {
 
   check = a * x + b * y + c;
 
-  if ((y2 != y1 || y2 != ymax) && (x2 != xmin && x1 != xmin)) {
+  if ((y2 != y1 || y2 != ymin) && (x2 != xmin && x1 != xmin)) {
     if (check <= 0) return false;
   }
   else {
@@ -106,7 +106,7 @@ function pointIsInsideTriangle(v0, v1, v2, p, ymax, xmin) {
 
   check = a * x + b * y + c;
 
-  if ((y0 != y2 || y0 != ymax) && (x0 != xmin && x2 != xmin)) {
+  if ((y0 != y2 || y0 != ymin) && (x0 != xmin && x2 != xmin)) {
     if (check <= 0) return false;
   }
   else {
