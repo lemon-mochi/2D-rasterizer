@@ -1,10 +1,6 @@
 import { Framebuffer } from './framebuffer.js';
 import { Rasterizer } from './rasterizer.js';
-// DO NOT CHANGE ANYTHING ABOVE HERE
 
-////////////////////////////////////////////////////////////////////////////////
-// TODO: Implement functions drawLine(v1, v2) and drawTriangle(v1, v2, v3) below.
-////////////////////////////////////////////////////////////////////////////////
 
 // take two vertices defining line and rasterize to framebuffer
 Rasterizer.prototype.drawLine = function(v1, v2) {
@@ -176,9 +172,6 @@ Rasterizer.prototype.drawTriangle = function(v0, v1, v2) {
   }
 }
 
-////////////////////////////////////////////////////////////////////////////////
-// EXTRA CREDIT: change DEF_INPUT to create something interesting!
-////////////////////////////////////////////////////////////////////////////////
 // I have created artwork of a mountain behind a lake on a sunny day.
 const DEF_INPUT = [
 "v,0,0,0.8,0.9,1;",
@@ -215,5 +208,4 @@ const DEF_INPUT = [
 "l,19,20;",
 ].join("\n");
 
-// DO NOT CHANGE ANYTHING BELOW HERE
 export { Rasterizer, Framebuffer, DEF_INPUT };

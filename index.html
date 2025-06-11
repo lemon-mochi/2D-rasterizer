@@ -9,7 +9,7 @@
       const pixelsWide = urlParams.get('pixelsWide') || 64;
       const saveImageFilename = urlParams.get('saveImage');
       const urlInput = urlParams.get('input');
-      const codeFile = urlParams.get('codeFile') || './a3.js';
+      const codeFile = urlParams.get('codeFile') || '/lines.js';
       const { Rasterizer, Framebuffer, DEF_INPUT } = await import(codeFile);
 
       document.getElementById("text-input").value = DEF_INPUT;
